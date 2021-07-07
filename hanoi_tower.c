@@ -1,27 +1,27 @@
 #include<stdio.h>
 
 int main(void) {
-    int n;  //¿ø¹Ý°³¼ö n°³¸¦ ÀúÀåÇÒ º¯¼ö n
-    printf("<<ÇÏ³ëÀÌÀÇ Å¾>>\n");
-    printf("¿ø¹Ý°³¼ö: ");
-    scanf_s("%d", &n);  //¿ø¹Ý°³¼ö nÀ» ÀÔ·Â¹ÞÀ½
-    Hanoi(1, 3, n); //ÇÏ³ëÀÌÀÇ Å¾Àº °á±¹ ¸ðµç ¿ø¹ÝÀÌ 1¹ø ±âµÕ¿¡¼­ 3¹øÀ¸·Î °¡¾ß Á¾·áµÊ
+    int n;  //ì›ë°˜ê°œìˆ˜ nê°œë¥¼ ì €ìž¥í•  ë³€ìˆ˜ n
+    printf("<<í•˜ë…¸ì´ì˜ íƒ‘>>\n");
+    printf("ì›ë°˜ê°œìˆ˜: ");
+    scanf_s("%d", &n);  //ì›ë°˜ê°œìˆ˜ nì„ ìž…ë ¥ë°›ìŒ
+    Hanoi(1, 3, n); //í•˜ë…¸ì´ì˜ íƒ‘ì€ ê²°êµ­ ëª¨ë“  ì›ë°˜ì´ 1ë²ˆ ê¸°ë‘¥ì—ì„œ 3ë²ˆìœ¼ë¡œ ê°€ì•¼ ì¢…ë£Œë¨
     
 }
 
-int Hanoi(int from, int to, int n) //from¹ø ±âµÕ¿¡¼­ to¹ø ±âµÕÀ¸·Î n°³ÀÇ ¿ø¹ÝÀ» ÀÌµ¿
+int Hanoi(int from, int to, int n) //fromë²ˆ ê¸°ë‘¥ì—ì„œ toë²ˆ ê¸°ë‘¥ìœ¼ë¡œ nê°œì˜ ì›ë°˜ì„ ì´ë™
 {   
     
     if (n == 1)
     {
-        printf("%d¹ø±âµÕ¿¡¼­ %d¹ø±âµÕÀ¸·Î\n", from, to);
+        printf("%dë²ˆê¸°ë‘¥ì—ì„œ %dë²ˆê¸°ë‘¥ìœ¼ë¡œ\n", from, to);
         
         return 0;
-    }   //¿ø¹ÝÀº ÇÑ¹ø¿¡ 1°³¾¿ ÀÌµ¿
+    }   //ì›ë°˜ì€ í•œë²ˆì— 1ê°œì”© ì´ë™
 
     Hanoi(from, 6 - from - to, n - 1);
-    printf("%d¹ø±âµÕ¿¡¼­ %d¹ø±âµÕÀ¸·Î\n", from, to);
+    printf("%dë²ˆê¸°ë‘¥ì—ì„œ %dë²ˆê¸°ë‘¥ìœ¼ë¡œ\n", from, to);
     Hanoi(6 - from - to, to, n - 1);
     return 0;
-    //Àç±ÍÇÔ¼ö¸¦ ÀÌ¿ëÇÏ¿©, n=1ÀÏ ¶§ HanoiÀÇ ¿ø¹ÝÀÌ ºñ·Î¼Ò ¿òÁ÷ÀÌ´Â °ÍÀ» ±¸ÇöÇÑ´Ù.
+    //ìž¬ê·€í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬, n=1ì¼ ë•Œ Hanoiì˜ ì›ë°˜ì´ ë¹„ë¡œì†Œ ì›€ì§ì´ëŠ” ê²ƒì„ êµ¬í˜„í•œë‹¤.
 }
