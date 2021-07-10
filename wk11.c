@@ -105,9 +105,7 @@ void member_login(struct member* m, int count) {  //아이디와 패스워드를
             if (!strcmp(tempPassword, m[i].password))
 
                 printf("같음\n");
-
         }
-
     }
 }
 //다른 기능 추가 시, 종료를 뒤로 보낼 수 있음
