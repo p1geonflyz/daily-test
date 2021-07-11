@@ -21,7 +21,6 @@ void member_login(struct member* m, int count);
 void member_join(struct member* m);
 
 
-
 main()
 
 {
