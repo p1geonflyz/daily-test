@@ -62,7 +62,6 @@ main()
 }
 
 
-
 void member_join(struct member* m) {
 
     printf("회원 아이디를 입력하세요 : ");
