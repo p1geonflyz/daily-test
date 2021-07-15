@@ -12,42 +12,42 @@ int main(void)
 	int betting, userUpDown, dice1, dice2, dice3, sum, dealerUpDown, YesNo, tempBetting;
 	int winCount = 0, loseCount = 0;
 	double winRate = 0;
-	//ÁÖ»çÀ§ °ÔÀÓ¿¡ ÇÊ¿äÇÑ º¯¼ö
+	//ì£¼ì‚¬ìœ„ ê²Œì„ì— í•„ìš”í•œ ë³€ìˆ˜
 
-	printf("±¤¿î·£µå¿¡ ¿À½Å°É È¯¿µÇÕ´Ï´Ù!\n");
-	printf("Ä«Áö³ë¿¡¼­ ¾µ ÃæÀüÇÏ½Ç ±İ¾×À» ÀÔ·ÂÇØÁÖ¼¼¿ä! : ");
+	printf("ê´‘ìš´ëœë“œì— ì˜¤ì‹ ê±¸ í™˜ì˜í•©ë‹ˆë‹¤!\n");
+	printf("ì¹´ì§€ë…¸ì—ì„œ ì“¸ ì¶©ì „í•˜ì‹¤ ê¸ˆì•¡ì„ ì…ë ¥í•´ì£¼ì„¸ìš”! : ");
 	scanf("%d", &totalBetting);
-	tempBetting = totalBetting;	//tempBettingÀº Ã³À½ ÀÖ¾ú´ø ±İ¾×À» ÀúÀåÇÏ´Â º¯¼ö
-	printf("ÀÌ °÷¿¡¼­´Â 2°¡Áö °ÔÀÓÀÌ Á¸ÀçÇÕ´Ï´Ù!\n");
+	tempBetting = totalBetting;	//tempBettingì€ ì²˜ìŒ ìˆì—ˆë˜ ê¸ˆì•¡ì„ ì €ì¥í•˜ëŠ” ë³€ìˆ˜
+	printf("ì´ ê³³ì—ì„œëŠ” 2ê°€ì§€ ê²Œì„ì´ ì¡´ì¬í•©ë‹ˆë‹¤!\n");
 
 	while(1)
 	{
-		printf("\n¾÷´Ù¿î °ÔÀÓÀ» ÇÏ½Ç²¨¸é 1¹øÀ», ÁÖ»çÀ§ °ÔÀÓÀ» ÇÏ½Ç²¨¸é 2¹øÀ» ´­·¯ÁÖ¼¼¿ä!\n");
-		printf("°ÔÀÓÀ» Á¾·áÇÏ½Ã·Á¸é 3¹øÀ» ´­·¯ÁÖ¼¼¿ä!\n");
-		scanf("%d", &gameSelect);	//°ÔÀÓ Á¤ÇÏ±â
+		printf("\nì—…ë‹¤ìš´ ê²Œì„ì„ í•˜ì‹¤êº¼ë©´ 1ë²ˆì„, ì£¼ì‚¬ìœ„ ê²Œì„ì„ í•˜ì‹¤êº¼ë©´ 2ë²ˆì„ ëˆŒëŸ¬ì£¼ì„¸ìš”!\n");
+		printf("ê²Œì„ì„ ì¢…ë£Œí•˜ì‹œë ¤ë©´ 3ë²ˆì„ ëˆŒëŸ¬ì£¼ì„¸ìš”!\n");
+		scanf("%d", &gameSelect);	//ê²Œì„ ì •í•˜ê¸°
 
 		if (gameSelect == 1) {
-			printf("¾÷´Ù¿î °ÔÀÓÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù! Àá½Ã¸¸ ±â´Ù·ÁÁÖ¼¼¿ä!\n");
-			printf("¹èÆÃÇÒ ±İ¾×À» ÀÔ·ÂÇÏ½Ã¿À : ");
+			printf("ì—…ë‹¤ìš´ ê²Œì„ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤! ì ì‹œë§Œ ê¸°ë‹¤ë ¤ì£¼ì„¸ìš”!\n");
+			printf("ë°°íŒ…í•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 			scanf("%d", &betting);
 
 			while (1)
 			{
 				srand(time(NULL));
 				random = rand() % 100 + 1;
-				//¾÷´Ù¿î °ÔÀÓ¿¡ ÇÊ¿äÇÑ º¯¼ö
+				//ì—…ë‹¤ìš´ ê²Œì„ì— í•„ìš”í•œ ë³€ìˆ˜
 
 				if (totalBetting <= 0)
 				{
-					printf("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù. Ä«Áö³ë¸¦ ³ª°©´Ï´Ù.\n");
+					printf("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤. ì¹´ì§€ë…¸ë¥¼ ë‚˜ê°‘ë‹ˆë‹¤.\n");
 					break;
 				}
 
 				else if (betting > totalBetting)
 				{
-					printf("¿¹»ê ¹üÀ§¸¦ ÃÊ°úÇß½À´Ï´Ù. ¹èÆÃ ±İ¾×À» ´Ù½Ã ¼³Á¤ÇØÁÖ¼¼¿ä.\n");
+					printf("ì˜ˆì‚° ë²”ìœ„ë¥¼ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤. ë°°íŒ… ê¸ˆì•¡ì„ ë‹¤ì‹œ ì„¤ì •í•´ì£¼ì„¸ìš”.\n");
 					break;
-				}	//¹èÆÃ ±İ¾×ÀÌ ¿¹»ê ¹üÀ§¸¦ ÃÊ°úÇÏ¸é ¹İº¹¹®ÀÌ ³¡³²
+				}	//ë°°íŒ… ê¸ˆì•¡ì´ ì˜ˆì‚° ë²”ìœ„ë¥¼ ì´ˆê³¼í•˜ë©´ ë°˜ë³µë¬¸ì´ ëë‚¨
 			
 				else
 				{
@@ -55,7 +55,7 @@ int main(void)
 					while(1)
 					{
 						count++;
-						printf("1~100ÀÇ °ªÀ» ÀÔ·ÂÇÏ½Ã¿À: ");
+						printf("1~100ì˜ ê°’ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
 						scanf("%d", &user);
 
 						if (user < random)
@@ -99,44 +99,43 @@ int main(void)
 				}
 			}
 			
-			printf("´ç½ÅÀÇ °¡±â Àü ÃÑ ±İ¾×Àº %d, ³ª¿Â ÈÄ ÃÑ ±İ¾×Àº %dÀÔ´Ï´Ù.\n", tempBetting, totalBetting);
-			printf("Á¤´ä : %d\n", random);
-			printf("¼ıÀÚ ¸ÂÃß´Â µ¥ °É¸° È½¼ö: %d\n", count);
+			printf("ë‹¹ì‹ ì˜ ê°€ê¸° ì „ ì´ ê¸ˆì•¡ì€ %d, ë‚˜ì˜¨ í›„ ì´ ê¸ˆì•¡ì€ %dì…ë‹ˆë‹¤.\n", tempBetting, totalBetting);
+			printf("ì •ë‹µ : %d\n", random);
+			printf("ìˆ«ì ë§ì¶”ëŠ” ë° ê±¸ë¦° íšŸìˆ˜: %d\n", count);
 			tempBetting = totalBetting;
-
 		}
 	
 		else if(gameSelect == 2){
-			printf("ÁÖ»çÀ§ °ÔÀÓÀ» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù! Àá½Ã¸¸ ±â´Ù·ÁÁÖ¼¼¿ä!\n");
+			printf("ì£¼ì‚¬ìœ„ ê²Œì„ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤! ì ì‹œë§Œ ê¸°ë‹¤ë ¤ì£¼ì„¸ìš”!\n");
 			while (1)
 			{
 
 				if (totalBetting <= 0)
 				{
-					printf("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù. Ä«Áö³ë¸¦ ³ª°©´Ï´Ù.\n");
+					printf("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤. ì¹´ì§€ë…¸ë¥¼ ë‚˜ê°‘ë‹ˆë‹¤.\n");
 					break;
 				}
 
 				do
 				{
-					printf("¹èÆÃÇÒ ±İ¾×À» ÀÔ·ÂÇÏ½Ã¿À : ");
+					printf("ë°°íŒ…í•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 					scanf("%d", &betting);
 
 					if (betting > totalBetting)
 					{
-						printf("¿¹»ê ¹üÀ§¸¦ ÃÊ°úÇß½À´Ï´Ù. ¹èÆÃ ±İ¾×À» ´Ù½Ã ¼³Á¤ÇØÁÖ¼¼¿ä.\n");
+						printf("ì˜ˆì‚° ë²”ìœ„ë¥¼ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤. ë°°íŒ… ê¸ˆì•¡ì„ ë‹¤ì‹œ ì„¤ì •í•´ì£¼ì„¸ìš”.\n");
 					}
-				} while (betting > totalBetting);	//¹èÆÃ ±İ¾×ÀÌ ¿¹»ê ¹üÀ§¸¦ ÃÊ°úÇÏ¸é ¹İº¹¹®ÀÌ ³¡³²
+				} while (betting > totalBetting);	//ë°°íŒ… ê¸ˆì•¡ì´ ì˜ˆì‚° ë²”ìœ„ë¥¼ ì´ˆê³¼í•˜ë©´ ë°˜ë³µë¬¸ì´ ëë‚¨
 
 				srand(time(NULL));
 				dice1 = rand() % 6 + 1;
 				dice2 = rand() % 6 + 1;
 				dice3 = rand() % 6 + 1;
-				//randomÀ¸·Î ¼³Á¤ : 1~6±îÁö
+				//randomìœ¼ë¡œ ì„¤ì • : 1~6ê¹Œì§€
 
 				sum = dice1 + dice2 + dice3;
 
-				printf("Up/DownÀ» ¼±ÅÃÇÏ½Ã¿À(¾÷Àº 1, ´Ù¿îÀº 2) : ");
+				printf("Up/Downì„ ì„ íƒí•˜ì‹œì˜¤(ì—…ì€ 1, ë‹¤ìš´ì€ 2) : ");
 				scanf("%d", &userUpDown);
 
 				if (sum >= 11)
@@ -152,7 +151,7 @@ int main(void)
 				for (int i = 10; i > 1; i--)
 				{
 					//Sleep(i * 1000);
-					printf("ÁÖ»çÀ§¸¦ ±¼¸³´Ï´Ù.\n");
+					printf("ì£¼ì‚¬ìœ„ë¥¼ êµ´ë¦½ë‹ˆë‹¤.\n");
 				}
 
 				if (userUpDown == dealerUpDown)
@@ -160,52 +159,52 @@ int main(void)
 			
 					winCount++;
 					totalBetting += betting;
-					printf("Win!\n´ç½ÅÀÇ ÀÜ¾×Àº %dÀÔ´Ï´Ù.\n", totalBetting);
+					printf("Win!\në‹¹ì‹ ì˜ ì”ì•¡ì€ %dì…ë‹ˆë‹¤.\n", totalBetting);
 				}
-				//ÀÌ±â¸é ÀÌ±ä È½¼ö Áõ°¡ ¹× ÀÜ¾× °è»ê
+				//ì´ê¸°ë©´ ì´ê¸´ íšŸìˆ˜ ì¦ê°€ ë° ì”ì•¡ ê³„ì‚°
 
 				else
 				{
 					loseCount++;
 					totalBetting -= betting;
-					printf("Lose!\n´ç½ÅÀÇ ÀÜ¾×Àº %dÀÔ´Ï´Ù.\n", totalBetting);
+					printf("Lose!\në‹¹ì‹ ì˜ ì”ì•¡ì€ %dì…ë‹ˆë‹¤.\n", totalBetting);
 				}
-				//Áö¸é Áø È½¼ö Áõ°¡ ¹× ÀÜ¾× °è»ê
+				//ì§€ë©´ ì§„ íšŸìˆ˜ ì¦ê°€ ë° ì”ì•¡ ê³„ì‚°
 
-				printf("ÁÖ»çÀ§1 : %d, ÁÖ»çÀ§2 : %d, ÁÖ»çÀ§3 : %d\n", dice1, dice2, dice3);
+				printf("ì£¼ì‚¬ìœ„1 : %d, ì£¼ì‚¬ìœ„2 : %d, ì£¼ì‚¬ìœ„3 : %d\n", dice1, dice2, dice3);
 
-				printf("\n°è¼Ó ÁøÇàÇÏ·Á¸é 1, Á¾·áÇÏ·Á¸é 0À» ÀÔ·ÂÇÏ½Ã¿À : ");
+				printf("\nê³„ì† ì§„í–‰í•˜ë ¤ë©´ 1, ì¢…ë£Œí•˜ë ¤ë©´ 0ì„ ì…ë ¥í•˜ì‹œì˜¤ : ");
 				scanf("%d", &YesNo);
 
 				if (YesNo == 0)
 				{
 					break;
 				}
-				//°è¼Ó ÁøÇà ¿©ºÎ È®ÀÎ : YesNo°¡ 0ÀÏ ½Ã ¹İº¹¹® ³ª°¨
+				//ê³„ì† ì§„í–‰ ì—¬ë¶€ í™•ì¸ : YesNoê°€ 0ì¼ ì‹œ ë°˜ë³µë¬¸ ë‚˜ê°
 			}
 
 			winRate = (double)winCount / (winCount + loseCount) * 100;
-			//winCount¿Í loseCount´Â ¸ğµÎ intÇüÀÌ¹Ç·Î ÀÚ·áÇü º¯È¯À» ÇÏ¿© (double)ÇüÅÂ·Î Ãâ·ÂÇÑ´Ù.
+			//winCountì™€ loseCountëŠ” ëª¨ë‘ intí˜•ì´ë¯€ë¡œ ìë£Œí˜• ë³€í™˜ì„ í•˜ì—¬ (double)í˜•íƒœë¡œ ì¶œë ¥í•œë‹¤.
 
-			printf("´ç½ÅÀÇ °¡±â Àü ÃÑ ±İ¾×Àº %d, ³ª¿Â ÈÄ ÃÑ ±İ¾×Àº %dÀÔ´Ï´Ù.\n", tempBetting, totalBetting);
-			printf("½Â¸®È½¼ö : %d, ÆĞ¹èÈ½¼ö : %d\n", winCount, loseCount);
-			printf("½Â·ü : %.1lf%%\n", winRate);
+			printf("ë‹¹ì‹ ì˜ ê°€ê¸° ì „ ì´ ê¸ˆì•¡ì€ %d, ë‚˜ì˜¨ í›„ ì´ ê¸ˆì•¡ì€ %dì…ë‹ˆë‹¤.\n", tempBetting, totalBetting);
+			printf("ìŠ¹ë¦¬íšŸìˆ˜ : %d, íŒ¨ë°°íšŸìˆ˜ : %d\n", winCount, loseCount);
+			printf("ìŠ¹ë¥  : %.1lf%%\n", winRate);
 			tempBetting = totalBetting;
 		}	
 
 		else if (gameSelect == 3)
 		{
-			printf("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+			printf("ê²Œì„ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 			break;
 		}
 
 		else
 		{
-			printf("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.\n");
+			printf("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.\n");
 		}
 
 	}
-	printf("\nÁñ°Å¿î ½Ã°£µÇ¼Ì½À´Ï±î? ¾È³çÈ÷ °¡½Ê½Ã¿À!\n");
+	printf("\nì¦ê±°ìš´ ì‹œê°„ë˜ì…¨ìŠµë‹ˆê¹Œ? ì•ˆë…•íˆ ê°€ì‹­ì‹œì˜¤!\n");
 
 	return 0;
 }
