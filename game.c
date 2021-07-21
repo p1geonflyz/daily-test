@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<Windows.h>
+//헤더파일들
 
 int main(void)
 {
